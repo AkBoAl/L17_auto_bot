@@ -351,6 +351,18 @@ let southern_archipelago = {
     },
 }
 let event_region = {
+    'Аллея Роз' : {
+        need_treated : true,
+        treatment_path : [['Аллея Роз', 'Театр «Де Фиорес»'],
+                        ['#btn1648', '#btnGo1649']],
+        numbers_attacks : 2,
+        'Вулли' : [0, 101, 'nobody'],
+        'Смородива' : [0, 101, 'nobody'],
+        'Камелиона' : [0, 101, 'nobody'],
+        'Толириб' : [0, 101, 'nobody'],
+        'Камолино' : [0, 101, 'nobody'],
+        'Пикан' : [0, 101, 'all'],
+    },
 }
 
 let variables = {
@@ -361,6 +373,7 @@ let variables = {
     sand_s : false, //ползунок автобоя в песчаный шторм
     hail : false,   //ползунок автобоя в град
     craft : false,  //ползунок выбивания крафт ресурсов
+    fatigue : false, //наличие усталости
     enemy_monster_name : '',    //имя напавнего монстра
     enemy_monster_lvl : '', //уровень напавшего монстра
     enemy_monster_color : '',   //приписка напавшего монстра(шайни)
@@ -541,6 +554,7 @@ function variables_input() {    //ввод данных
     variables.visio_fight = $('#divVisioFight').attr('style') == 'display: none;' ? false : true;
     variables.close_fight_button = $('#divFightButtons div:last').attr('style') == 'display: none;' ? false : true;
     if (variables.visio_fight) {
+        variables.fatigue = $('.extra img:last src');
         variables.enemy_monster_color = $('#divFightH .minicard div:first span').text() != '' ? true : false;
         variables.enemy_monster_name = $('#divFightH div').is($('.name')) ? $('#divFightH div.name').text() : '';
         variables.enemy_monster_lvl = $('#divFightH div').is($('.lvl')) ? $('#divFightH div.lvl').text() : '';
