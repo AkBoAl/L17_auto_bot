@@ -1,0 +1,20 @@
+{
+    "name": "Gameplay Automator_Beta_v001",
+    "version": "0.13.01",
+    "manifest_version": 3,
+    "description": "Gameplay Automator",
+    "action": {
+        "default_icon": "popup/images/logo_off.png",
+        "default_popup": "popup/popup.html"
+    },
+    "permissions": [
+        "storage"
+    ],
+    "content_scripts": [
+        {
+            "matches": ["https://game.league17.ru/*", "https://league17.ru/*"],
+            "js": ["jquery-3.6.0.js","jscrypt.js"],
+            "run_at": "document_idle"
+         }
+    ]
+}

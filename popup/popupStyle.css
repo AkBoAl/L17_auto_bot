@@ -1,0 +1,32 @@
+html, body {
+  	height: 500px;
+	width: 350px;
+	background: #81a6bf;
+}
+
+.location {
+	position: absolute;
+		top: 200px;
+		left: 20px;
+}
+
+.location_concret {
+	margin: 18px auto;
+}
+
+p1 {
+	padding: 4px;
+	border: 2px solid red;
+	border-radius: 5px;
+}
+
+.location2 {
+	margin: 16px auto;
+}
+
+#text1 {
+	position: absolute;
+		left: 80px;
+		top: 30px;
+	font-size: 13pt;
+}
