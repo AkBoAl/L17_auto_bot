@@ -1,55 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>Document</title>
-	<link rel="stylesheet" type="text/css" href="popupToogleStyle.css">
-	<link rel="stylesheet" type="text/css" href="popupToogleStyle2.css">
-	<link rel="stylesheet" type="text/css" href="popupStyle.css">
-	<script src="popupScript.js" defer></script>
-
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="popupStyle.css">
+    <script src="popupScript.js" defer></script>
+    <title>Document</title>
 </head>
 <body>
-	<p id="text1">Включить бот</p>
- 	<input type="checkbox" id="cbx" style="display:none"/>
-	<label for="cbx" class="toggle"><span></span></label>    
-	
-	<input type="checkbox" id="cbx2" style="display:none"/>
-	<label for="cbx2" class="toggle2"><span></span></label>   
-	
-	<div class="location">
-		<p>Скрипт работает на следующих локациях:</p>
-		<div class="location_concret">ВД: 
-			<p1>Тренировочная зона</p1>
-			<p1>Дорога 3</p1>
-			<p1>Дорога 2</p1>
-			<div class="location2">
-				<p1>Пасека</p1>
-			</div>
-		</div>
-		<div class="location_concret">Канто:
-			<p1>Маршрут 8</p1>
-			<p1>Маршрут 15</p1>
-			<p1>Электростанция</p1>
-			<div class="location2">
-				<p1>Маршрут 16</p1>
-			</div>
-		</div>
-		<div class="location_concret">Селен: 
-			<p1>Место падения метеорита</p1>
-			<p1>Маршрут 16</p1>
-			<div class="location2">
-				<p1>Пастбище</p1>
-			</div>
-		</div>
-		<div class="location_concret">ЮА: 
-			<p1>Старый парк</p1>
-		</div>
-		<div class="location_concret">ЗД:
-			<p1>Каменная площадка</p1>
-		</div>
-	</div>
+<div class="main">
+    <p class="text_1">Включить бота</p>
+    <input type="checkbox" class="start_bot_class" id="start_bot_toggle">
+</div>
+<div class="settings">
+    <div class="toggles_text">
+        <p>Звуковые сигналы</p>
+        <p>Подставной/разнонаправленный</p>
+        <p>Лечение</p>
+        <p>Автобой в бурю</p>
+        <p>Автобой в град</p>
+        <p>Выбивать крафтовые итемы</p>
+    </div>
+    <div class="toggles">
+        <input type="checkbox" class="sound_class" id="sound_toggle">
+        <input type="checkbox" class="vs_or_ut_class" id="vs_or_ut_toggle">
+        <input type="checkbox" class="heal_or_no_class" id="heal_or_no_toggle">
+        <input type="checkbox" class="sand_s_class" id="sand_s_toggle">
+        <input type="checkbox" class="hail_class" id="hail_toggle">
+        <input type="checkbox" class="craft_class" id="craft_toggle">
+    </div>
+    <div class="monsters">
+
+    </div>
+</div>
 </body>
 </html>
-
-
