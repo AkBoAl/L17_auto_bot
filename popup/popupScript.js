@@ -5,6 +5,7 @@ document.getElementById('heal_or_no_toggle').addEventListener('change', heal_or_
 document.getElementById('sand_s_toggle').addEventListener('change', sand_s_fun);
 document.getElementById('hail_toggle').addEventListener('change', hail_fun);
 document.getElementById('craft_toggle').addEventListener('change', craft_fun);
+document.getElementById('test_toggle').addEventListener('change', test_fun);
 
 chrome.storage.local.get(['start_bot_ctrg'], function(result) {
     document.getElementById('start_bot_toggle').checked = result.start_bot_ctrg;
@@ -56,6 +57,10 @@ function craft_fun() {
     chrome.storage.local.set({'craft_ctrg': document.getElementById('craft_toggle').checked})
 }
 
+function test_fun() {
+    chrome.storage.local.set({'test_ctrg' : document.getElementById('test_toggle').checked})
+}
+
 chrome.storage.onChanged.addListener(() => {
     chrome.storage.local.get(['start_bot_ctrg'], function(result) {
         document.getElementById('start_bot_toggle').checked = result.start_bot_ctrg;
@@ -77,5 +82,8 @@ chrome.storage.onChanged.addListener(() => {
     })
     chrome.storage.local.get(['craft_ctrg'], function(result) {
         document.getElementById('craft_toggle').checked = result.craft_ctrg;
+    })
+    chrome.storage.local.get(['test_ctrg'], function(result) {
+        document.getElementById('test_toggle').checked = result.test_ctrg;
     })
 })

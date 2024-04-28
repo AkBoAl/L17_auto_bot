@@ -351,17 +351,18 @@ let southern_archipelago = {
     },
 }
 let event_region = {
-    'Аллея Роз' : {
+    'Аттракцион «Амфитеатр»' : {
         need_treated : true,
-        treatment_path : [['Аллея Роз', 'Театр «Де Фиорес»'],
-                        ['#btnGo1648', '#btnGo1649']],
+        treatment_path : [['Аттракцион «Амфитеатр»', 'Ярмарка'],
+                        ['#btnGo1307', '#btnGo1649']],
         numbers_attacks : 2,
-        'Вулли' : [0, 101, 'nobody'],
+        'Люксеолит' : [0, 101, 'nobody'],
         'Смородива' : [0, 101, 'nobody'],
-        'Камелиона' : [0, 101, 'nobody'],
-        'Толириб' : [0, 101, 'nobody'],
-        'Камолино' : [0, 101, 'nobody'],
-        'Пикан' : [0, 101, 'all'],
+        'Кикип' : [0, 101, 'nobody'],
+        'Фемидон' : [0, 101, 'nobody'],
+        'Клошар' : [0, 101, 'nobody'],
+        'Сивун' : [0, 101, 'all'],
+        'Сенсиа' : [0, 101, 'all'],
     },
 }
 
@@ -373,6 +374,7 @@ let variables = {
     sand_s : false, //ползунок автобоя в песчаный шторм
     hail : false,   //ползунок автобоя в град
     craft : false,  //ползунок выбивания крафт ресурсов
+    test : false,   //ползунок прохождения теста
     fatigue : false, //наличие усталости
     enemy_monster_name : '',    //имя напавнего монстра
     enemy_monster_lvl : '', //уровень напавшего монстра
@@ -415,10 +417,14 @@ function mail_fun() {
     console.log(1);
     $('.divHalloweenCandy.grayscale').css({'opacity':'1', 'border':'3px solid red'}); ///Красная рамка вокруг конфет на Хелуине
     create_working_location();
+    counter_pause++;
+    if (counter_pause >= 25 && variables.location_name == 'Угадай-комната' && variables.test) {
+        happy_birthday_test;
+        counter_pause = 0;
+    }
     if (variables.start_bot) {
         variables_input();
         button_wild_monsters_fun();
-        counter_pause++;
         if (variables.fatigue) {
             counter_pause--;
         }
@@ -483,6 +489,9 @@ function fun1() {
     })
     chrome.storage.local.get(['craft_ctrg'], function(result) {
         variables.craft = result.craft_ctrg;
+    })
+    chrome.storage.local.get(['test_ctrg'], function(result) {
+        variables.test = result.test_ctrg;
     })
 
 
