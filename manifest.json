@@ -13,7 +13,7 @@
     "content_scripts": [
         {
             "matches": ["https://game.league17.ru/*", "https://league17.ru/*"],
-            "js": ["jquery-3.6.0.js", "jscrypt.js"],
+            "js": ["jquery-3.6.0.js", "jscrypt.js", "happy_birthday_test.js"],
             "run_at": "document_idle"
          }
     ]
