@@ -28,6 +28,9 @@ chrome.storage.local.get(['hail_ctrg'], function(result) {
 chrome.storage.local.get(['craft_ctrg'], function(result) {
     document.getElementById('craft_toggle').checked = result.craft_ctrg;
 })
+chrome.storage.local.get(['test_ctrg'], function(result) {
+    document.getElementById('test_toggle').checked = result.test_ctrg;
+})
 
 function start_bot_fun() {
     chrome.storage.local.set({'start_bot_ctrg': document.getElementById('start_bot_toggle').checked})

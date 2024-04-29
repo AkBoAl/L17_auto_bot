@@ -353,16 +353,18 @@ let southern_archipelago = {
 let event_region = {
     'Аттракцион «Амфитеатр»' : {
         need_treated : true,
-        treatment_path : [['Аттракцион «Амфитеатр»', 'Ярмарка'],
-                        ['#btnGo1307', '#btnGo1649']],
+        treatment_path : [['Аттракцион «Амфитеатр»'],
+                        ['#btnGo1307']],
         numbers_attacks : 2,
         'Люксеолит' : [0, 101, 'nobody'],
-        'Смородива' : [0, 101, 'nobody'],
         'Кикип' : [0, 101, 'nobody'],
         'Фемидон' : [0, 101, 'nobody'],
         'Клошар' : [0, 101, 'nobody'],
-        'Сивун' : [0, 101, 'all'],
-        'Сенсиа' : [0, 101, 'all'],
+        'Сивун' : [0, 101, 'nobody'],
+        'Сенсиа' : [0, 101, 'nobody'],
+        'Битав' : [0, 101, 'nobody'],
+        'Нокталит' : [0, 101, 'nobody'],
+        'Джорбик' : [0, 101, 'nobody'],
     },
 }
 
@@ -419,7 +421,8 @@ function mail_fun() {
     create_working_location();
     counter_pause++;
     if (counter_pause >= 25 && variables.location_name == 'Угадай-комната' && variables.test) {
-        happy_birthday_test;
+        console.log('test');
+        happy_birthday_test();
         counter_pause = 0;
     }
     if (variables.start_bot) {
@@ -516,6 +519,9 @@ function fun1() {
         })
         chrome.storage.local.get(['craft_ctrg'], function(result) {
             variables.craft = result.craft_ctrg;
+        })
+        chrome.storage.local.get(['test_ctrg'], function(result) {
+            variables.test = result.test_ctrg;
         })
     })
 }
